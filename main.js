@@ -48,9 +48,9 @@
       '<pre style="font-size: 1.5rem; font-family: monospace;">' +
         JSON.stringify({
           title: document.title,
-          language: document.documentElement.lang,
-          charset: document.characterSet,
-          doctype: document.doctype.name
+          language: document?.documentElement?.lang,
+          charset: document?.characterSet,
+          doctype: document?.doctype?.name
         }, null, 2).replaceAll('"', '').replaceAll(',', '').slice(1, -1) +
       '</pre>'
     );
