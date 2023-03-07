@@ -6,6 +6,7 @@
   container.style.zIndex = '9999';
   container.style.margin = '1rem';
   container.style.padding = '1rem';
+  container.style.paddingTop = '1.5rem'; // For clearance of the close button
   container.style.backgroundColor = 'white';
   container.style.borderRadius = '15px';
   container.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
@@ -15,6 +16,20 @@
   container.style.justifyContent = 'space-between';
   container.style.alignItems = 'center';
   container.style.gap = '0.5rem';
+
+  const close = document.createElement('button');
+  close.textContent = '×';
+  close.style.cursor = 'pointer';
+  close.style.position = 'absolute';
+  close.style.top = '0';
+  close.style.left = '0';
+  close.style.backgroundColor = 'transparent';
+  close.style.border = 'none';
+  close.style.paddingLeft = '0.5rem';
+  close.style.fontSize = '1.5rem';
+  close.addEventListener('click', () => document.body.removeChild(container));
+
+  container.appendChild(close);
 
   const button = document.createElement('button');
   button.style.backgroundColor = '#0d6efd';
